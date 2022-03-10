@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c73fea6feaf1f9ca604f7b1a12cf3b6a885b202f03b1bfe75b587e96cc760fcd"
+            "sha256": "809bbe629300036f298f82b70f2c8bcdee762593555be8a5172e4fe8ef55ea19"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -393,6 +393,14 @@
             ],
             "version": "==0.6.2"
         },
+        "faker": {
+            "hashes": [
+                "sha256:c88c8b5ee9376a242deca8fe829f9a3215ffa43c31da6f66d9594531fb344453",
+                "sha256:fa060e331ffffb57cfa4c07f95d54911e339984ed72596ba6a9e7b6fa569d799"
+            ],
+            "index": "pypi",
+            "version": "==13.3.1"
+        },
         "flake8": {
             "hashes": [
                 "sha256:479b1304f72536a55948cb40a32dce8bb0ffe3501e26eaf292c7e60eb5e0428d",
@@ -519,10 +527,18 @@
         },
         "pytest-watch": {
             "hashes": [
-                "sha256:06136f03d5b361718b8d0d234042f7b2f203910d8568f63df2f866b547b3d4b9"
+                "sha256:91deecccdddd22ad5f756b1206ffea972ecb7ff55a8f7a4b8c84745d4ebec09b"
             ],
             "index": "pypi",
-            "version": "==4.2.0"
+            "version": "==2.0.0"
+        },
+        "python-dateutil": {
+            "hashes": [
+                "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86",
+                "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "version": "==2.8.2"
         },
         "requests": {
             "hashes": [
@@ -531,6 +547,14 @@
             ],
             "index": "pypi",
             "version": "==2.27.1"
+        },
+        "six": {
+            "hashes": [
+                "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926",
+                "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"
+            ],
+            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
+            "version": "==1.16.0"
         },
         "tomli": {
             "hashes": [

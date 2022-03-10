@@ -14,11 +14,12 @@ requests = "*"
 [dev-packages]
 pytest = "*"
 pytest-cov = "*"
-pytest-watch = "*"
+pytest-watch = "==2.0.0"
 black = "*"
 isort = "*"
 requests = "*"
 flake8 = "*"
+faker = "*"
 
 [requires]
 python_version = "3.9"
