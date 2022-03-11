@@ -20,6 +20,7 @@ isort = "*"
 requests = "*"
 flake8 = "*"
 faker = "*"
+pytest-asyncio = "*"
 
 [requires]
 python_version = "3.9"

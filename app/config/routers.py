@@ -9,5 +9,7 @@ def init_routers(app: FastAPI):
     :return:
     """
     from app.modules.core import helthcheck_router
+    from app.modules.user import router as user_router
 
     app.include_router(helthcheck_router.router)
+    app.include_router(user_router.router, prefix="/users", tags=["User"])

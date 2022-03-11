@@ -14,8 +14,12 @@ class Setting(BaseSettings):
     ENVIRONMENT: str = config("ENVIRONMENT", default="dev")
     TESTING: bool = config("TESTING", default=False, cast=bool)
     DEBUG: bool = config("DEBUG", default=False, cast=bool)
-    MODELS: List = ["app.modules.core.tortoise", "aerich.models"]
     DB_URL = config("DB_URL", default="sqlite://boilerplate.db")
+    MODELS: List = [
+        "app.modules.core.tortoise",
+        "app.modules.user.model",
+        "aerich.models",
+    ]
 
 
 def get_settings():
