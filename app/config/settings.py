@@ -16,7 +16,6 @@ class Setting(BaseSettings):
     DB_URL = config("DB_URL")
     DB_TEST_URL = config("DB_TEST_URL")
     MODELS: List = [
-        "app.modules.core.tortoise",
         "app.modules.user.model",
         "aerich.models",
     ]

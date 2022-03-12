@@ -1,7 +1,7 @@
 from typing import List
 
 from app.modules.user.model import User
-from app.modules.user.schema import (CreateAndUpdateUser)
+from app.modules.user.schema import CreateAndUpdateUser
 
 
 async def save_user(payload: CreateAndUpdateUser) -> User:
@@ -14,3 +14,11 @@ async def all_user() -> List[User]:
 
 async def find_user_by_id(user_id: int) -> [User, None]:
     return await User.get_or_none(user_id=user_id)
+
+
+async def delete_user(user_id: int) -> bool:
+    user = await find_user_by_id(user_id)
+    if user:
+        await user.delete()
+        return True
+    return False

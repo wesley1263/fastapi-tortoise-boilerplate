@@ -7,7 +7,9 @@ def test_users_should_return_ok_when_invoked(test_app):
     assert response.status_code == 200
 
 
-def test_user_post_should_return_201_when_payload_valid(test_app_with_db, user_create_dict_fake):
+def test_user_post_should_return_201_when_payload_valid(
+        test_app_with_db, user_create_dict_fake
+):
     response = test_app_with_db.post("/users/", json=user_create_dict_fake)
     user_create_dict_fake["user_id"] = response.json()["user_id"]
 
@@ -16,18 +18,22 @@ def test_user_post_should_return_201_when_payload_valid(test_app_with_db, user_c
 
 
 def test_user_post_should_return_422_when_payload_invalid(test_app_with_db):
-    response = test_app_with_db.post("/users/", json={"email": "test@example.com", "status": False})
+    response = test_app_with_db.post(
+        "/users/", json={"email": "test@example.com", "status": False}
+    )
 
     assert response.status_code == 422
 
 
 def test_user_get_with_param_should_return_200_when_param_is_valid(test_app_with_db):
-    response = test_app_with_db.post("/users/", json={"email": "test@example.com", "status": False})
+    response = test_app_with_db.post(
+        "/users/", json={"email": "test@example.com", "status": False}
+    )
 
     assert response.status_code == 422
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="function")
 def user_created(test_app_with_db, user_create_dict_fake):
     response = test_app_with_db.post("/users/", json=user_create_dict_fake)
     return response.json()
@@ -42,8 +48,26 @@ def test_user_get_should_return_200_when_id_exist(test_app_with_db, user_created
         assert user_created[key] == value
 
 
-def test_user_get_should_return_200_when_id_exist(test_app_with_db):
+def test_user_get_should_return_404_when_id_not_exist(test_app_with_db):
     user_id = 10001
     response = test_app_with_db.get(f"/users/{user_id}")
 
     assert response.status_code == 404
+
+
+def test_user_delete_should_return_204_when_id_exist(
+        test_app_with_db, user_create_dict_fake
+):
+    response = test_app_with_db.post("/users/", json=user_create_dict_fake)
+    payload = response.json()
+    user_id = payload.get("user_id")
+    response = test_app_with_db.delete(f"/users/{user_id}")
+
+    assert response.status_code == 204
+
+
+def test_user_delete_should_return_400_when_id_not_exist(test_app_with_db):
+    user_id = 2010
+    response = test_app_with_db.delete(f"/users/{user_id}")
+
+    assert response.status_code == 400

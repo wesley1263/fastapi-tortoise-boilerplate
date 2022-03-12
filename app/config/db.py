@@ -33,7 +33,4 @@ def init_db(app: FastAPI):
 
 async def connect_to_database() -> None:
     log.info("Initialize Tortoise...")
-    await Tortoise.init(
-        db_url=settings.DB_URL,
-        modules={"models": settings.MODELS}
-    )
+    await Tortoise.init(db_url=settings.DB_URL, modules={"models": settings.MODELS})

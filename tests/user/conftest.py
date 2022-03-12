@@ -1,8 +1,8 @@
 import pytest
 from faker import Factory
 
-from app.modules.user.model import User
 from app.modules.user import schema
+from app.modules.user.model import User
 
 faker = Factory.create("pt_BR")
 

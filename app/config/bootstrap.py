@@ -2,7 +2,7 @@ import logging
 
 from fastapi import FastAPI
 
-from app.config.db import init_db, connect_to_database
+from app.config.db import connect_to_database, init_db
 from app.config.routers import init_routers
 from app.config.settings import get_settings
 
