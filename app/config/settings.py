@@ -13,8 +13,8 @@ class Setting(BaseSettings):
     APP_PORT: int = config("APP_PORT", default=8000, cast=int)
     ENVIRONMENT: str = config("ENVIRONMENT", default="dev")
     TESTING: bool = config("TESTING", default=False, cast=bool)
-    DEBUG: bool = config("DEBUG", default=False, cast=bool)
-    DB_URL = config("DB_URL", default="sqlite://boilerplate.db")
+    DB_URL = config("DB_URL")
+    DB_TEST_URL = config("DB_TEST_URL")
     MODELS: List = [
         "app.modules.core.tortoise",
         "app.modules.user.model",

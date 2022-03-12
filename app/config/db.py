@@ -1,7 +1,7 @@
 import logging
 
 from fastapi import FastAPI
-from tortoise import Tortoise, run_async
+from tortoise import Tortoise
 from tortoise.contrib.starlette import register_tortoise
 
 from .settings import get_settings

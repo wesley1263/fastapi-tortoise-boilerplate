@@ -23,6 +23,15 @@ def user_dict_fake():
 
 
 @pytest.fixture
+def user_create_dict_fake():
+    return {
+        "name": faker.name(),
+        "email": faker.email(),
+        "status": True,
+    }
+
+
+@pytest.fixture
 def user_model_fake(user_dict_fake):
     return User(**user_dict_fake)
 
