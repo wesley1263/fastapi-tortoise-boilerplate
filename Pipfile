@@ -10,6 +10,9 @@ tortoise = "*"
 aerich = "*"
 python-decouple = "*"
 requests = "*"
+aiokafka = "*"
+certifi = "*"
+kafka-python = "*"
 
 [dev-packages]
 pytest = "*"
