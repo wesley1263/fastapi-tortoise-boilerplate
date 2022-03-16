@@ -1,4 +1,5 @@
 import logging
+from functools import lru_cache
 from typing import List
 
 from decouple import config
@@ -15,12 +16,18 @@ class Setting(BaseSettings):
     TESTING: bool = config("TESTING", default=False, cast=bool)
     DB_URL = config("DB_URL")
     DB_TEST_URL = config("DB_TEST_URL")
+    KAFKA_TOPIC = config("KAFKA_TOPIC")
+    KAFKA_USERNAME = config("KAFKA_USERNAME")
+    KAFKA_PASSWORD = config("KAFKA_PASSWORD")
+    KAFKA_BOOTSTRAP_SERVERS = config("KAFKA_BOOTSTRAP_SERVERS")
     MODELS: List = [
         "app.modules.user.model",
+        "app.modules.category.model",
         "aerich.models",
     ]
 
 
+@lru_cache()
 def get_settings():
     log.info("Loading Config Application.")
     return Setting()

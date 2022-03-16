@@ -1,6 +1,9 @@
+from datetime import datetime
 from typing import List
 
 from fastapi import APIRouter, HTTPException
+from starlette import status
+from starlette.responses import Response
 
 from app.modules.user.schema import CreateAndUpdateUser, GetUser
 from app.modules.user.service import (create_a_user, find_a_user_by_id,
@@ -43,8 +46,8 @@ async def create_user(payload: CreateAndUpdateUser):
 
 
 @router.delete("/{user_id}", description="Router to remove a user", status_code=204)
-async def create_user(user_id: int):
+async def remove_user(user_id: int):
     result = await remove_a_user(user_id)
     if not result:
         raise HTTPException(status_code=400, detail="User ID not found")
-    return {"msg": "User has been removed"}
+    return Response(status_code=status.HTTP_204_NO_CONTENT)

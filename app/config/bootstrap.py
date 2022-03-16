@@ -2,7 +2,7 @@ import logging
 
 from fastapi import FastAPI
 
-from app.config.db import connect_to_database, init_db
+from app.config.db import connect_to_database, init_db, close_connection_database
 from app.config.routers import init_routers
 from app.config.settings import get_settings
 
@@ -30,3 +30,4 @@ async def statup_event():
 @app.on_event("shutdown")
 async def shutdown_event():
     log.info("Shutting down...")
+    close_connection_database()
