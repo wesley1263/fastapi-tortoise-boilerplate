@@ -5,6 +5,7 @@ from fastapi import FastAPI
 from app.config.db import connect_to_database, init_db
 from app.config.routers import init_routers
 from app.config.settings import get_settings
+from app.config.kafka import producer
 
 setting = get_settings()
 log = logging.getLogger("uvicorn")
@@ -30,3 +31,5 @@ async def statup_event():
 @app.on_event("shutdown")
 async def shutdown_event():
     log.info("Shutting down...")
+    producer.close()
+
