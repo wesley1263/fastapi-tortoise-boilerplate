@@ -40,3 +40,17 @@ kafka_producer_console:
 read_message_kafka:
 	@read -p "Set the name topic: " TOPIC \
 	&& docker-compose exec kafka kafka-console-consumer --bootstrap-server kafka:9092 --topic $${TOPIC} --from-beginning
+
+run:
+	@docker-compose up -d
+
+stop:
+	@docker-compose down
+
+
+makemigrations:
+	@read -p "set your name migration: " MIGRATION \
+	&& aerich migrate --name $${MIGRATION}
+
+migrate:
+	@aerich upgrade

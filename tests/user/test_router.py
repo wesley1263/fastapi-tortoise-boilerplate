@@ -8,7 +8,7 @@ def test_users_should_return_ok_when_invoked(test_app):
 
 
 def test_user_post_should_return_201_when_payload_valid(
-        test_app_with_db, user_create_dict_fake
+    test_app_with_db, user_create_dict_fake
 ):
     response = test_app_with_db.post("/users/", json=user_create_dict_fake)
     user_create_dict_fake["user_id"] = response.json()["user_id"]
@@ -56,7 +56,7 @@ def test_user_get_should_return_404_when_id_not_exist(test_app_with_db):
 
 
 def test_user_delete_should_return_204_when_id_exist(
-        test_app_with_db, user_create_dict_fake
+    test_app_with_db, user_create_dict_fake
 ):
     response = test_app_with_db.post("/users/", json=user_create_dict_fake)
     payload = response.json()
