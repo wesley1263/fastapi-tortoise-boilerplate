@@ -14,6 +14,15 @@ class GetCategory(BaseModel):
     status: bool = True
 
 
-class CreateAndUpdateCategory(BaseModel):
+class CreateCategory(BaseModel):
     name: str
     status: Optional[bool] = True
+
+
+class UpdateCategory(BaseModel):
+    category_id: int
+    name: str
+    status: Optional[bool] = True
+
+    class Config:
+        orm_mode = True

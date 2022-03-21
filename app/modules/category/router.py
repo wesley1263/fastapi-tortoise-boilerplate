@@ -3,7 +3,7 @@ from typing import List
 from fastapi import APIRouter
 from starlette import status
 
-from app.modules.category.schema import (CreateAndUpdateCategory, GetCategory, CategorySchema)
+from app.modules.category.schema import (CreateCategory, GetCategory, CategorySchema)
 from app.modules.category.service import CategoryService
 
 router = APIRouter()
@@ -13,7 +13,7 @@ router = APIRouter()
              description="This router is to register new category",
              response_model=GetCategory,
              status_code=status.HTTP_201_CREATED)
-async def post_category(payload: CreateAndUpdateCategory):
+async def post_category(payload: CreateCategory):
     return await CategoryService().save_category(payload)
 
 
