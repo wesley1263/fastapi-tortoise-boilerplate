@@ -1,4 +1,6 @@
-def test_post_category_should_return_201_when_payload_valid(category_dict_faker, test_app_with_db):
+def test_post_category_should_return_201_when_payload_valid(
+    category_dict_faker, test_app_with_db
+):
     response = test_app_with_db.post("/categories/", json=category_dict_faker)
 
     payload = response.json()
@@ -8,7 +10,9 @@ def test_post_category_should_return_201_when_payload_valid(category_dict_faker,
 
 
 def test_post_category_should_return_422_when_payload_invalid(test_app_with_db):
-    response = test_app_with_db.post("/categories/", json={"status": True, "category_id": 1})
+    response = test_app_with_db.post(
+        "/categories/", json={"status": True, "category_id": 1}
+    )
 
     assert response.status_code == 422
 

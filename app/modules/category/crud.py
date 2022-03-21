@@ -5,7 +5,6 @@ from app.modules.category.schema import CreateCategory, UpdateCategory
 
 
 class CategoryCRUD:
-
     async def save_category(self, payload: CreateCategory) -> [Category, None]:
         exists = await self.get_category_by_name(payload.name)
         if exists:

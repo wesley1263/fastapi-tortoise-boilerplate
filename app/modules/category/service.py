@@ -2,11 +2,11 @@ from tortoise.contrib.pydantic import pydantic_model_creator
 
 from app.modules.category.crud import CategoryCRUD
 from app.modules.category.model import Category
-from app.modules.category.schema import CreateCategory, GetCategory, UpdateCategory
+from app.modules.category.schema import (CreateCategory, GetCategory,
+                                         UpdateCategory)
 
 
 class CategoryService:
-
     async def save_category(self, payload: CreateCategory) -> GetCategory:
         result = await CategoryCRUD().create_category(payload)
         return await self._serializer(result)

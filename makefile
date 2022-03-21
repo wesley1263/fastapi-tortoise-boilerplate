@@ -5,7 +5,7 @@ COLOUR_END=\033[0m
 
 formatter:
 	@black .
-	@isort --recursive .
+	@isort .
 	@flake8
 
 testing:

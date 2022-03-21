@@ -16,10 +16,10 @@ class Setting(BaseSettings):
     TESTING: bool = config("TESTING", default=False, cast=bool)
     DB_URL = config("DB_URL")
     DB_TEST_URL = config("DB_TEST_URL")
-    KAFKA_TOPIC = config("KAFKA_TOPIC")
-    KAFKA_USERNAME = config("KAFKA_USERNAME")
-    KAFKA_PASSWORD = config("KAFKA_PASSWORD")
-    KAFKA_BOOTSTRAP_SERVERS = config("KAFKA_BOOTSTRAP_SERVERS")
+    DYNAMO_ENDPOINT_URL = config("DYNAMO_ENDPOINT_URL")
+    DYNAMO_REGION_NAME = config("DYNAMO_REGION_NAME")
+    DYNAMO_AWS_ACCESS_KEY_ID = config("DYNAMO_AWS_ACCESS_KEY_ID")
+    DYNAMO_AWS_SECRET_ACCESS_KEY = config("DYNAMO_AWS_SECRET_ACCESS_KEY")
     MODELS: List = [
         "app.modules.user.model",
         "app.modules.category.model",

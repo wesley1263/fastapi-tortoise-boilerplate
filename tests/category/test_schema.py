@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 
-from app.modules.category.schema import CreateCategory, GetCategory, CategorySchema
+from app.modules.category.schema import (CategorySchema, CreateCategory,
+                                         GetCategory)
 
 
 def test_get_category_schema_should_return_instance_when_invoked(category_dict_faker):
@@ -14,7 +15,7 @@ def test_get_category_schema_should_return_instance_when_invoked(category_dict_f
 
 
 def test_category_schema_create_and_update_should_return_instance_when_invoked(
-        category_dict_faker,
+    category_dict_faker,
 ):
     schema = CreateCategory(**category_dict_faker)
 
@@ -25,7 +26,7 @@ def test_category_schema_create_and_update_should_return_instance_when_invoked(
 
 
 def test_category_schema_should_return_instance_when_invoked(
-        category_dict_faker,
+    category_dict_faker,
 ):
     schema = CategorySchema(**category_dict_faker)
 
