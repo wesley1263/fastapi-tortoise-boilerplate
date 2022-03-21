@@ -25,7 +25,13 @@ $ git clone <https://github.com/wesley1263/fastapi-tortoise-boilerplate.git>
 $ cd app_name
 
 ### Install all dependencies
-$ pipenv install
+$ pipenv install --dev
+
+### Rename dotenv file
+$ mv dotenv_example .env
+
+### Run migrates
+$ make migrate
 
 ### Running application in develop mode
 $ python run.py
@@ -41,6 +47,11 @@ For run tests, use this commands:
 or
 ```bash
   make testing 
+```
+
+##For create new module, use this commands:
+```bash
+  make create_module 
 ```
 
 ## Reference
