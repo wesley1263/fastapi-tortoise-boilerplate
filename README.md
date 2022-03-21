@@ -27,6 +27,9 @@ $ cd app_name
 ### Install all dependencies
 $ pipenv install --dev
 
+### Enable environment
+$ pipenv shell
+
 ### Rename dotenv file
 $ mv dotenv_example .env
 
