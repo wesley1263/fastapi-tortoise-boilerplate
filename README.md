@@ -39,7 +39,7 @@ $ make migrate
 ### Running application in develop mode
 $ python run.py
 
-### The application is runnuing in port:8000 - acesse <http://localhost:8000> 
+### The application is runnuing in port:8000 - acesse <http://localhost:8000/health-check> 
 ## Running tests
 
 For run tests, use this commands:
