@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from app.modules.category.schema import CreateAndUpdateCategory, GetCategory, CategorySchema
+from app.modules.category.schema import CreateCategory, GetCategory, CategorySchema
 
 
 def test_get_category_schema_should_return_instance_when_invoked(category_dict_faker):
@@ -16,9 +16,9 @@ def test_get_category_schema_should_return_instance_when_invoked(category_dict_f
 def test_category_schema_create_and_update_should_return_instance_when_invoked(
         category_dict_faker,
 ):
-    schema = CreateAndUpdateCategory(**category_dict_faker)
+    schema = CreateCategory(**category_dict_faker)
 
-    assert isinstance(schema, CreateAndUpdateCategory)
+    assert isinstance(schema, CreateCategory)
     assert isinstance(schema, BaseModel)
     assert isinstance(schema.name, str)
     assert isinstance(schema.status, bool)
