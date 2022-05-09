@@ -18,7 +18,7 @@ create_module:
 	&& echo '' > ./app/modules/$${MODULE}/__init__.py \
 	&& echo '' > ./app/modules/$${MODULE}/router.py \
 	&& echo '' > ./app/modules/$${MODULE}/model.py \
-	&& echo '' > ./app/modules/$${MODULE}/crud.py \
+	&& echo '' > ./app/modules/$${MODULE}/repository.py \
 	&& echo '' > ./app/modules/$${MODULE}/schema.py \
 	&& echo '' > ./app/modules/$${MODULE}/service.py \
 	&& echo '' > ./tests/$${MODULE}/__init__.py \

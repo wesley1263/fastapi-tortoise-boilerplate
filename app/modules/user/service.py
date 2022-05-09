@@ -1,7 +1,7 @@
 from tortoise.contrib.pydantic import pydantic_model_creator
 
-from app.modules.user.crud import (all_user, delete_user, find_user_by_id,
-                                   save_user)
+from app.modules.user.repository import (all_user, delete_user, find_user_by_id,
+                                         save_user)
 from app.modules.user.model import User
 from app.modules.user.schema import CreateAndUpdateUser, GetUser
 
